@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const { assert } = require('chai');
 const PrismLoader = require('./helper/prism-loader');
@@ -36,6 +36,11 @@ const testOptions = {
 	},
 
 	'false': {
+		word: false,
+		template: false
+	},
+	// Hoon uses _ in its keywords
+	'hoon': {
 		word: false,
 		template: false
 	},
@@ -157,7 +162,7 @@ function getOptions(lang) {
  * @property {string | Token | (string | Token)[]} content
  */
 function isNotBroken(token) {
-	if (typeof token === "string") {
+	if (typeof token === 'string') {
 		return true;
 	} else if (Array.isArray(token)) {
 		return token.length === 1 && isNotBroken(token[0]);
@@ -170,7 +175,7 @@ function isNotBroken(token) {
  * Tests all patterns in the given Prism instance.
  *
  * @param {any} Prism
- * @param {lang} Prism
+ * @param {string} lang
  */
 function testLiterals(Prism, lang) {
 

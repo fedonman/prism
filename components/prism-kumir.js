@@ -1,15 +1,18 @@
+/* eslint-disable regexp/no-dupe-characters-character-class */
 (function (Prism) {
 
 	/**
 	 * Regular expression for characters that are not allowed in identifiers.
-	 * @type {String}
+	 *
+	 * @type {string}
 	 */
 	var nonId = /\s\x00-\x1f\x22-\x2f\x3a-\x3f\x5b-\x5e\x60\x7b-\x7e/.source;
 
 	/**
 	 * Surround a regular expression for IDs with patterns for non-ID sequences.
-	 * @param {String} pattern A regular expression for identifiers.
-	 * @param {String} [flags] The regular expression flags.
+	 *
+	 * @param {string} pattern A regular expression for identifiers.
+	 * @param {string} [flags] The regular expression flags.
 	 * @returns {RegExp} A wrapped regular expression for identifiers.
 	 */
 	function wrapId(pattern, flags) {
@@ -73,6 +76,7 @@
 
 		/** Should be performed after searching for reserved words. */
 		'name': {
+			// eslint-disable-next-line regexp/no-super-linear-backtracking
 			pattern: wrapId(/(^|[<nonId>])[^\d<nonId>][^<nonId>]*(?:\x20+[^<nonId>]+)*(?=[<nonId>]|$)/.source),
 			lookbehind: true
 		},
