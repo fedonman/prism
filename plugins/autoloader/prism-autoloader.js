@@ -4,6 +4,8 @@
 		return;
 	}
 
+	/* eslint-disable */
+
 	/**
 	 * The dependencies map is built automatically with gulp.
 	 *
@@ -86,6 +88,7 @@
 		],
 		"less": "css",
 		"lilypond": "scheme",
+		"liquid": "markup-templating",
 		"markdown": "markup",
 		"markup-templating": "markup",
 		"mongodb": "javascript",
@@ -112,6 +115,10 @@
 		"qml": "javascript",
 		"qore": "clike",
 		"racket": "scheme",
+		"cshtml": [
+			"markup",
+			"csharp"
+		],
 		"jsx": [
 			"markup",
 			"javascript"
@@ -132,7 +139,6 @@
 		"sparql": "turtle",
 		"sqf": "clike",
 		"squirrel": "clike",
-		"swift": "clike",
 		"t4-cs": [
 			"t4-templating",
 			"csharp"
@@ -147,7 +153,7 @@
 			"markup-templating"
 		],
 		"textile": "markup",
-		"twig": "markup",
+		"twig": "markup-templating",
 		"typescript": "javascript",
 		"v": "clike",
 		"vala": "clike",
@@ -169,7 +175,10 @@
 		"rss": "markup",
 		"js": "javascript",
 		"g4": "antlr4",
+		"ino": "arduino",
 		"adoc": "asciidoc",
+		"avs": "avisynth",
+		"avdl": "avro-idl",
 		"shell": "bash",
 		"shortcode": "bbcode",
 		"rbnf": "bnf",
@@ -187,6 +196,9 @@
 		"xlsx": "excel-formula",
 		"xls": "excel-formula",
 		"gamemakerlanguage": "gml",
+		"gni": "gn",
+		"go-mod": "go-module",
+		"hbs": "handlebars",
 		"hs": "haskell",
 		"idr": "idris",
 		"gitignore": "ignore",
@@ -218,6 +230,7 @@
 		"py": "python",
 		"qs": "qsharp",
 		"rkt": "racket",
+		"razor": "cshtml",
 		"rpy": "renpy",
 		"robot": "robotframework",
 		"rb": "ruby",
@@ -228,6 +241,8 @@
 		"sln": "solution-file",
 		"rq": "sparql",
 		"t4": "t4-cs",
+		"trickle": "tremor",
+		"troy": "tremor",
 		"trig": "turtle",
 		"ts": "typescript",
 		"tsconfig": "typoscript",
@@ -236,9 +251,15 @@
 		"url": "uri",
 		"vb": "visual-basic",
 		"vba": "visual-basic",
+		"webidl": "web-idl",
+		"mathematica": "wolfram",
+		"nb": "wolfram",
+		"wl": "wolfram",
 		"xeoracube": "xeora",
 		"yml": "yaml"
 	}/*]*/;
+
+	/* eslint-enable */
 
 	/**
 	 * @typedef LangDataItem
@@ -350,7 +371,7 @@
 	 * @returns {string}
 	 */
 	function getLanguagePath(lang) {
-		return config.languages_path + 'prism-' + lang + (config.use_minified ? '.min' : '') + '.js'
+		return config.languages_path + 'prism-' + lang + (config.use_minified ? '.min' : '') + '.js';
 	}
 
 	/**
@@ -443,7 +464,7 @@
 					languageCallback(lang, 'error');
 				});
 			}
-		};
+		}
 
 		var dependencies = lang_dependencies[lang];
 		if (dependencies && dependencies.length) {

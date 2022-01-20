@@ -46,7 +46,7 @@
 		type: 'Adj BigInt Bool Ctl Double false Int One Pauli PauliI PauliX PauliY PauliZ Qubit Range Result String true Unit Zero',
 		// all other keywords
 		other: 'Adjoint adjoint apply as auto body borrow borrowing Controlled controlled distribute elif else fail fixup for function if in internal intrinsic invert is let mutable namespace new newtype open operation repeat return self set until use using while within'
-	} 
+	};
 	// keywords
 	function keywordsToPattern(words) {
 		return '\\b(?:' + words.trim().replace(/ /g, '|') + ')\\b';
@@ -84,14 +84,14 @@
 			},
 			{
 				// namespace Quantum.App1;
-				pattern: re(/(\bnamespace\s+)<<0>>(?=\s*{)/.source, [qualifiedName]),
+				pattern: re(/(\bnamespace\s+)<<0>>(?=\s*\{)/.source, [qualifiedName]),
 				lookbehind: true,
 				inside: typeInside
 			},
 		],
 		'keyword': keywords,
 		'number': /(?:\b0(?:x[\da-f]+|b[01]+|o[0-7]+)|(?:\B\.\d+|\b\d+(?:\.\d*)?)(?:e[-+]?\d+)?)l?\b/i,
-		'operator': /\band=|\bor=|\band\b|\bor\b|\bnot\b|<[-=]|[-=]>|>>>=?|<<<=?|\^\^\^=?|\|\|\|=?|&&&=?|w\/=?|~~~|[*\/+\-^=!%]=?/,
+		'operator': /\band=|\bor=|\band\b|\bnot\b|\bor\b|<[-=]|[-=]>|>>>=?|<<<=?|\^\^\^=?|\|\|\|=?|&&&=?|w\/=?|~~~|[*\/+\-^=!%]=?/,
 		'punctuation': /::|[{}[\];(),.:]/
 	});
 
