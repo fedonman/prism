@@ -13,66 +13,66 @@
 ----------------------------------------------------
 
 [
-	["header", [
+	["section", [
 		["punctuation", "["],
 		["section-name", "foo1"],
 		["punctuation", "]"]
 	]],
 
-	["header", [
+	["section", [
 		["punctuation", "["],
 		["section-name", "\"foo2\""],
 		["punctuation", "]"]
 	]],
 
-	["header", [
+	["section", [
 		["punctuation", "["],
 		["section-name", "foo3"],
 		["punctuation", "]"]
 	]],
 
-	["header", [
+	["section", [
 		["punctuation", "["],
 		["section-name", "\" foo4 \""],
 		["punctuation", "]"]
 	]],
 
-	["header", [
+	["section", [
 		["punctuation", "["],
 		["section-name", "\"foo5 bar5\""],
 		["punctuation", "]"]
 	]],
 
-	["header", [
+	["section", [
 		["punctuation", "["],
 		["section-name", "\"foo6\""],
 		["punctuation", "]"]
 	]],
 
-	["header", [
+	["section", [
 		["punctuation", "["],
 		["section-name", "foo7"]
 	]],
 
-	["header", [
+	["section", [
 		["punctuation", "["],
 		["section-name", "foo8 bar8"],
 		["punctuation", "]"]
 	]],
 
-	["header", [
+	["section", [
 		["punctuation", "["],
 		["section-name", "foo9[bar9"],
 		["punctuation", "]"]
 	]],
 
-	["header", [
+	["section", [
 		["punctuation", "["],
 		["section-name", "foo10"],
 		["punctuation", "]"]
 	]],
 
-	["header", [
+	["section", [
 		["punctuation", "["],
 		["section-name", "foo11"],
 		["punctuation", "]"]
@@ -83,4 +83,4 @@
 
 ----------------------------------------------------
 
-Checks for headers (and section names).
+Checks for sections (and section names).
